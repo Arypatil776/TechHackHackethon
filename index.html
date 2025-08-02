@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaQuest</title>
+  <link rel="stylesheet" href="Learn.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" onclick="toggleSidebar()">⋮</div>
+    <h1 class="center-title">LinguaQuest</h1>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li>Japanese</li>
+      <li>German</li>
+      <li>Spanish</li>
+      <li>English</li>
+      <li>French</li>
+    </ul>
+  </div>
+
+  <nav class="topbar">
+    <div>LEARN</div>
+    <div>XP FARM</div>
+    <div>DICTIONARY</div>
+  </nav>
+
+  <main class="content">
+    <svg width="100%" height="100%">
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L9,3 z" fill="#fff" />
+        </marker>
+      </defs>
+      <line x1="32%" y1="30%" x2="48%" y2="45%" stroke="white" stroke-width="2" marker-end="url(#arrow)" />
+      <line x1="48%" y1="45%" x2="43%" y2="65%" stroke="white" stroke-width="2" marker-end="url(#arrow)" />
+    </svg>
+
+    <div class="circle" style="top: 30%; left: 32%;">1</div>
+    <div class="circle" style="top: 45%; left: 48%;">2</div>
+    <div class="circle" style="top: 65%; left: 43%;">3</div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
