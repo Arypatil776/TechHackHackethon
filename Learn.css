@@ -1,0 +1,109 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1a1a2e;
+  color: white;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #162245;
+  padding: 15px 20px;
+  border-bottom: 1px solid #3a66a5;
+}
+
+.menu-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.center-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.sidebar {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 30%;
+  height: calc(100% - 60px);
+  background-color: #0a0a50;
+  padding: 20px;
+  display: none;
+  z-index: 10;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 12px 10px;
+  color: white;
+  border-bottom: 1px solid #3a3a7a;
+  font-size: 16px;
+}
+
+.topbar {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 15px;
+  background-color: #203070;
+  justify-content: space-around;
+  white-space: nowrap;
+}
+
+.topbar div {
+  cursor: pointer;
+  background-color: #2d3e80;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 130px);
+  padding: 10px;
+}
+
+.circle {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-color: #00adb5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60%;
+  }
+
+  .center-title {
+    font-size: 1.2rem;
+  }
+
+  .topbar div {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
