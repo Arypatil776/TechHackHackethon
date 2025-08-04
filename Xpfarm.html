@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XP Farm Game</title>
+  <link rel="stylesheet" href="learn.css" />
+</head>
+
+<body>
+  <!-- Sidebar toggle -->
+  <div id="sidebar-toggle">
+    <span id="menu-icon">&#9776;</span>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <span id="close-btn">&times;</span>
+    <ul>
+      <li>Japanese</li>
+      <li>German</li>
+      <li>Spanish</li>
+      <li>French</li>
+    </ul>
+  </div>
+
+  <!-- Header with Tabs -->
+  <header>
+    <h1>Website Name</h1>
+    <div class="tabs">
+      <div class="tab" id="learn-tab">LEARN</div>
+      <div class="tab active" id="xpfarm-tab">XP FARM</div>
+      <div class="tab" id="recall-tab">RECALL</div>
+    </div>
+  </header>
+
+  <!-- Sections -->
+  <main>
+    <!-- Learn Section -->
+    <section id="learn-section" class="content-section" style="display: none;">
+      <h2 style="text-align: center;">Learn Section</h2>
+    </section>
+
+    <!-- XP Farm Section -->
+    <section id="xpfarm-section" class="content-section">
+      <div class="progress-container">
+        <span class="star">&#11088;</span>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="hearts">
+          <span class="heart" data-index="0">&#10084;</span>
+          <span class="heart" data-index="1">&#10084;</span>
+          <span class="heart" data-index="2">&#10084;</span>
+        </div>
+      </div>
+
+      <div class="game-wrapper">
+        <img class="game-image"
+          src="https://media.istockphoto.com/id/1087680522/vector/japan-chef-with-cartoon-style.jpg?s=612x612&w=0&k=20&c=13Cf4Lk6bf6HejdNW38xb_5IRrFil6q6OzJsGBqwJQ4="
+          alt="Chef Cartoon">
+        <div class="game-area">
+          <div class="words">
+            <button class="word">WORD 1</button>
+            <button class="word">WORD 2</button>
+            <button class="word">WORD 3</button>
+            <button class="word">WORD 4</button>
+            <button class="word">WORD 5</button>
+          </div>
+          <div class="matches">
+            <button class="match">MATCH 2</button>
+            <button class="match">MATCH 3</button>
+            <button class="match">MATCH 5</button>
+            <button class="match">MATCH 1</button>
+            <button class="match">MATCH 4</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recall Section -->
+    <section id="recall-section" class="content-section" style="display: none;">
+      <div id="recall-content" style="display: none;">
+        <div class="recall-grid">
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Buch')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">BUCH</div>
+            <div class="word-en">BOOK</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Apfel')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">APFEL</div>
+            <div class="word-en">APPLE</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Haus')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">HAUS</div>
+            <div class="word-en">HOUSE</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Wasser')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">WASSER</div>
+            <div class="word-en">WATER</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Stuhl')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">STUHL</div>
+            <div class="word-en">CHAIR</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Tisch')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">TISCH</div>
+            <div class="word-en">TABLE</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Fenster')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">FENSTER</div>
+            <div class="word-en">WINDOW</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Blume')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">BLUME</div>
+            <div class="word-en">FLOWER</div>
+          </div>
+
+          <div class="recall-card">
+            <div class="voice-button" onclick="speak(this,'Katze')">
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+              <div class="voice-line"></div>
+            </div>
+            <div class="word-de">KATZE</div>
+            <div class="word-en">CAT</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="learn.js"></script>
+</body>
+
+</html>
