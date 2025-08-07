@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .full-width-image {
@@ -83,6 +83,7 @@ header {
 }
 
 .tabs {
+  position: sticky;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -442,4 +443,250 @@ body.sidebar-open #menu-icon {
   .game-image {
     max-height: 150px;
   }
+}
+.learn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 20px;
+  position: relative;
+}
+
+
+.learn-flag img {
+  width: 60px; /* or any smaller size you want */
+  margin-left: auto;
+  margin-right: 30px;
+  display: block;
+}
+
+/* Container for buttons positioned over image */
+.level-flow-chart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  max-width: 700px;
+  margin-top: -50px;
+}
+.level-flow-chart {
+  margin-top: 0px;
+  position: relative;
+}
+
+.level-row {
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.level-row.left {
+  justify-content: flex-start;
+  padding-left: 500px;
+}
+
+.level-row.right {
+  justify-content: flex-end;
+  padding-right: 500px;
+}
+
+
+.level-btn {
+  width: 100px;
+  height: 100px;
+  background-color: #7a00aa;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.level-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Diagonal layout over image */
+.level-btn:nth-child(1) {
+  top: -15%;
+  left: 0%;
+}
+
+.level-btn:nth-child(2) {
+  top:-14%;
+  left: 70%;
+}
+
+.level-btn:nth-child(3) {
+  top: 15%;
+  left: 0%;
+}
+
+.level-btn:nth-child(4) {
+  top: 15%;
+  left: 70%;
+}
+
+
+
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .level-btn {
+    padding: 16px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* Popup Style */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  background-color: rgb(230, 194, 255);
+  margin: 10% auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  font-family: 'Comic Neue', cursive;
+  color: black;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* EXISTING STYLES ABOVE REMAIN UNCHANGED */
+
+/* Media Query for Learn Section and Recall Section */
+@media (max-width: 768px) {
+  .learn-container {
+    padding: 40px 10px;
+    gap: 30px;
+  }
+
+  .learn-flag img {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .level-flow-chart {
+    max-width: 100%;
+    max-height: none;
+  }
+  
+  .level-row.left, .level-row.right {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .level-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .recall-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+  }
+
+  .recall-card {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .word-de {
+    font-size: 1.2rem;
+  }
+
+  .word-en {
+    font-size: 0.9rem;
+  }
+
+  .voice-button {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 26px;
+  }
+
+  .voice-line {
+    width: 2px;
+    height: 60%;
+  }
+}
+
+/* Enable scrolling if content overflows vertically on smaller screens */
+@media (max-width: 768px) {
+  #recall-section {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  #learn-section {
+    overflow-y: auto;
+    height: 100vh;
+  }
+}
+
+/* Ensure vertical stacking for recall content */
+#next-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 12px;
+  background: #2e9549;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#next-btn:hover {
+  background: #4a00e0;
+  transform: scale(1.05);
 }
