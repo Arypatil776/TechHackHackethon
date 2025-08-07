@@ -1,297 +1,371 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XP Farm Game</title>
-  <link rel="stylesheet" href="Xpfarm.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XP Farm Game</title>
+    <link rel="stylesheet" href="Xpfarm.css" />
 </head>
 
 <body>
-  <div id="sidebar-toggle">
-    <span id="menu-icon">&#9776;</span>
-  </div>
-
-  <div id="sidebar">
-    <span id="close-btn">&times;</span>
-    <ul>
-      <li>Japanese</li>
-      <li>German</li>
-      <li>Spanish</li>
-      <li>French</li>
-    </ul>
-  </div>
-
-  <header>
-    <h1>LINGUAQUEST</h1>
-    <div class="tabs">
-      <div class="tab" id="learn-tab">LEARN</div>
-      <div class="tab active" id="xpfarm-tab">XP FARM</div>
-      <div class="tab" id="recall-tab">RECALL</div>
+    <!-- Sidebar toggle -->
+    <div id="sidebar-toggle">
+        <span id="menu-icon">&#9776;</span>
     </div>
-  </header>
 
-  <main>
-    <section id="learn-section" class="content-section" style="display: none;">
-      <div class="learn-container">
-        <div class="learn-flag">
-          <img src="https://flagcdn.com/w320/jp.png" alt=" Flag" />
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <span id="close-btn">&times;</span>
+        <ul>
+            <li>Japanese</li>
+            <li>German</li>
+            <li>Spanish</li>
+            <li>French</li>
+        </ul>
+    </div>
+
+    <!-- Header with Tabs -->
+    <header>
+        <h1>Website Name</h1>
+        <div class="tabs">
+            <div class="tab" id="learn-tab">LEARN</div>
+            <div class="tab active" id="xpfarm-tab">XP FARM</div>
+            <div class="tab" id="recall-tab">RECALL</div>
         </div>
+    </header>
 
-        <div class="level-flow-chart">
-          <div class="level-row left">
-            <button class="level-btn" onclick="showPopup('popup1')">level-1</button>
-          </div>
-          <div class="level-row right">
-            <button class="level-btn" onclick="showPopup('popup2')">level-2</button>
-          </div>
-          <div class="level-row left">
-            <button class="level-btn" onclick="showPopup('popup3')">level-3</button>
-          </div>
-          <div class="level-row right">
-            <button class="level-btn" onclick="showPopup('popup4')">level-4</button>
-          </div>
-        </div>
+    <!-- Sections -->
+    <main>
+        <!-- Learn Section -->
+        <!-- Learn Section -->
+        <section id="learn-section" class="content-section" style="display: none;">
+            <div class="learn-container">
 
-        <svg class="connector" style="top: 40px; left: 100px;">
-          <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-              <polygon points="0 0, 10 3.5, 0 7" fill="white" />
-            </marker>
-          </defs>
-          <line x1="0" y1="0" x2="120" y2="50" />
-        </svg>
+                <!-- Left: German Flag -->
+                <div class="learn-flag">
+                    <img src="https://flagcdn.com/w320/de.png" alt="Flag" />
+                </div>
 
-        <svg class="connector" style="top: 160px; left: 100px;">
-          <line x1="0" y1="0" x2="120" y2="-50" />
-        </svg>
+                <!-- Center: Level Flow -->
+                <div class="level-flow-chart">
+                    <div class="level-row left">
+                        <button class="level-btn" onclick="showPopup('popup1')">level-1</button>
+                    </div>
+                    <div class="level-row right">
+                        <button class="level-btn" onclick="showPopup('popup2')">level-2</button>
+                    </div>
+                    <div class="level-row left">
+                        <button class="level-btn" onclick="showPopup('popup3')">level-3</button>
+                    </div>
+                    <div class="level-row right">
+                        <button class="level-btn" onclick="showPopup('popup4')">level-4</button>
+                    </div>
+                </div>
 
-        <svg class="connector" style="top: 250px; left: 100px;">
-          <line x1="0" y1="0" x2="120" y2="50" />
-        </svg>
-      </div>
+                <!-- Arrows -->
+                <svg class="connector" style="top: 40px; left: 100px;">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="white" />
+                        </marker>
+                    </defs>
+                    <line x1="0" y1="0" x2="120" y2="50" />
+                </svg>
 
-      <div id="popup1" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup('popup1')">&times;</span>
-          <h2>Japanese Numbers</h2>
-          <ul>
-            <li>1 - 一 (Ichi)</li>
-            <li>2 - 二 (Ni)</li>
-            <li>3 - 三 (San)</li>
-            <li>4 - 四 (Yon/Shi)</li>
-            <li>5 - 五 (Go)</li>
-            <li>6 - 六 (Roku)</li>
-            <li>7 - 七 (Nana/Shichi)</li>
-            <li>8 - 八 (Hachi)</li>
-            <li>9 - 九 (Kyuu/Ku)</li>
-            <li>10 - 十 (Juu)</li>
-            <li>20 - 二十 (Nijuu)</li>
-            <li>30 - 三十 (Sanjuu)</li>
-            <li>40 - 四十 (Yonjū)</li>
-            <li>50 - 五十 (Gojū)</li>
-            <li>60 - 六十 (Rokujū)</li>
-            <li>70 - 七十 (Nanjū)</li>
-            <li>80 - 八十 (Hachijū)</li>
-            <li>90 - 九十 (Kyūjū)</li>
-            <li>100 - 百 (Hyaku)</li>
-          </ul>
-        </div>
-      </div>
+                <svg class="connector" style="top: 160px; left: 100px;">
+                    <line x1="0" y1="0" x2="120" y2="-50" />
+                </svg>
 
-      <div id="popup2" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup('popup2')">&times;</span>
-          <h2>Common Japanese Words</h2>
-          <ul>
-            <li>Hello - こんにちは (Konnichiwa)</li>
-            <li>Goodbye - さようなら (Sayounara)</li>
-            <li>Thank You - ありがとう (Arigatou)</li>
-            <li>Please - お願いします (Onegaishimasu)</li>
-            <li>Sorry - ごめんなさい (Gomen nasai)</li>
-            <li>Yes - はい (Hai)</li>
-            <li>No - いいえ (Iie)</li>
-            <li>Water - 水 (Mizu)</li>
-            <li>Food - 食べ物 (Tabemono)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div id="popup3" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup('popup3')">&times;</span>
-          <h2>Animal Names in Japanese</h2>
-          <ul>
-            <li>Dog - 犬 (Inu)</li>
-            <li>Cat - 猫 (Neko)</li>
-            <li>Bird - 鳥 (Tori)</li>
-            <li>Fish - 魚 (Sakana)</li>
-            <li>Horse - 馬 (Uma)</li>
-            <li>Cow - 牛 (Ushi)</li>
-            <li>Sheep - 羊 (Hitsuji)</li>
-            <li>Elephant - 象 (Zou)</li>
-            <li>Monkey - 猿 (Saru)</li>
-            <li>Rabbit - 兎 (Usagi)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div id="popup4" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup('popup4')">&times;</span>
-          <h2>Family Members in Japanese</h2>
-          <ul>
-            <li>Mother - 母 (Haha)</li>
-            <li>Father - 父 (Chichi)</li>
-            <li>Older Brother - 兄 (Ani)</li>
-            <li>Older Sister - 姉 (Ane)</li>
-            <li>Grandmother - 祖母 (Sobo)</li>
-            <li>Friend - 友達 (Tomodachi)</li>
-            <li>Child - 子供 (Kodomo)</li>
-            <li>Grandfather - 祖父 (Sofu)</li>
-            <li>Uncle - 叔父 (Oji)</li>
-            <li>Aunt - 叔母 (Oba)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="xpfarm-section" class="content-section">
-      <div class="progress-container">
-        <span class="star">&#11088;</span>
-        <div class="progress-bar">
-          <div class="progress"></div>
-        </div>
-        <div class="hearts">
-          <span class="heart" data-index="0">&#10084;</span>
-          <span class="heart" data-index="1">&#10084;</span>
-          <span class="heart" data-index="2">&#10084;</span>
-        </div>
-      </div>
-
-      <div class="game-wrapper">
-        <img class="game-image"
-          src="https://media.istockphoto.com/id/1087680522/vector/japan-chef-with-cartoon-style.jpg?s=612x612&w=0&k=20&c=13Cf4Lk6bf6HejdNW38xb_5IRrFil6q6OzJsGBqwJQ4="
-          alt="Chef Cartoon">
-        <div class="game-area">
-          <div class="words">
-            <button class="word">WORD 1</button>
-            <button class="word">WORD 2</button>
-            <button class="word">WORD 3</button>
-            <button class="word">WORD 4</button>
-            <button class="word">WORD 5</button>
-          </div>
-          <div class="matches">
-            <button class="match">MATCH 2</button>
-            <button class="match">MATCH 3</button>
-            <button class="match">MATCH 5</button>
-            <button class="match">MATCH 1</button>
-            <button class="match">MATCH 4</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="recall-section" class="content-section" style="display: none;">
-      <div id="recall-content" style="display: none;">
-        <div class="recall-grid">
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'いち')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+                <svg class="connector" style="top: 250px; left: 100px;">
+                    <line x1="0" y1="0" x2="120" y2="50" />
+                </svg>
             </div>
-            <div class="word-de">一 (Ichi)</div>
-            <div class="word-en">1</div>
-          </div>
 
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'みず')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <!-- Popups -->
+            <div id="popup1" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup1')">&times;</span>
+                    <h2>German Numbers</h2>
+                    <ul>
+                        <li>1 - Eins</li>
+                        <li>2 - Zwei</li>
+                        <li>3 - Drei</li>
+                        <li>4 - Vier</li>
+                        <li>5 - Fünf</li>
+                        <li>6 - Sechs</li>
+                        <li>7 - Sieben</li>
+                        <li>8 - Acht</li>
+                        <li>9 - Neun</li>
+                        <li>10 - Zehn</li>
+                        <li>20 - Zwanzig</li>
+                        <li>30 - Dreißig</li>
+                        <li>40 - Vierzig</li>
+                        <li>50 - Fünfzig</li>
+                        <li>60 - Sechzig</li>
+                        <li>70 - Siebzig</li>
+                        <li>80 - Achtzig</li>
+                        <li>90 - Neunzig</li>
+                        <li>100 - Hundert</li>
+                    </ul>
+                </div>
             </div>
-            <div class="word-de">水 (Mizu)</div>
-            <div class="word-en">Water</div>
-          </div>
 
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'ありがとう')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <div id="popup2" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup2')">&times;</span>
+                    <h2>Common German Words</h2>
+                    <ul>
+                        <li>Hello - Hallo</li>
+                        <li>Goodbye - Auf Wiedersehen</li>
+                        <li>Thank You - Danke</li>
+                        <li>Please - Bitte</li>
+                        <li>Sorry - Entschuldigung</li>
+                        <li>Yes - Ja</li>
+                        <li>No - Nein</li>
+                        <li>Water - Wasser</li>
+                        <li>Food - Essen</li>
+                    </ul>
+                </div>
             </div>
-            <div class="word-de">ありがとう (Arigatou)</div>
-            <div class="word-en">Thank You</div>
-          </div>
 
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'ねこ')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <div id="popup3" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup3')">&times;</span>
+                    <h2>Animal Names in German</h2>
+                    <ul>
+                        <li>Dog - Hund</li>
+                        <li>Cat - Katze</li>
+                        <li>Bird - Vogel</li>
+                        <li>Fish - Fisch</li>
+                        <li>Horse - Pferd</li>
+                        <li>Cow - Kuh</li>
+                        <li>Sheep - Schaf</li>
+                        <li>Elephant - Elefant</li>
+                        <li>Monkey - Affe</li>
+                        <li>Rabbit - Kaninchen</li>
+                    </ul>
+                </div>
             </div>
-            <div class="word-de">猫 (Neko)</div>
-            <div class="word-en">Cat</div>
-          </div>
 
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'うま')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <div id="popup4" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup4')">&times;</span>
+                    <h2>Family Members in German</h2>
+                    <ul>
+                        <li>Mother - Mutter</li>
+                        <li>Father - Vater</li>
+                        <li>Older Brother - Älterer Bruder</li>
+                        <li>Older Sister - Ältere Schwester</li>
+                        <li>Grandmother - Großmutter</li>
+                        <li>Grandfather - Großvater</li>
+                        <li>Uncle - Onkel</li>
+                        <li>Aunt - Tante</li>
+                        <li>Child - Kind</li>
+                        <li>Friend - Freund / Freundin</li>
+                    </ul>
+                </div>
             </div>
-            <div class="word-de">馬 (Uma)</div>
-            <div class="word-en">Horse</div>
-          </div>
+        </section>
 
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'ともだち')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+
+        <!-- XP Farm Section -->
+
+        <section id="xpfarm-section" class="content-section">
+            <div id="star-counter" style="text-align: center; font-size: 24px; margin-bottom: 10px;">
+                ⭐ Stars: <span id="star-count">0</span>
             </div>
-            <div class="word-de">友達 (Tomodachi)</div>
-            <div class="word-en">Friend</div>
-          </div>
-
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'いぬ')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <div class="progress-container">
+                <span class="star">&#11088;</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="hearts">
+                    <span class="heart" data-index="0">&#10084;</span>
+                    <span class="heart" data-index="1">&#10084;</span>
+                    <span class="heart" data-index="2">&#10084;</span>
+                </div>
             </div>
-            <div class="word-de">犬 (Inu)</div>
-            <div class="word-en">Dog</div>
-          </div>
+            <!-- Inside #xpfarm-section -->
 
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'はは')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <div class="game-wrapper">
+                <img class="game-image"
+                    src="https://media.istockphoto.com/id/1087680522/vector/japan-chef-with-cartoon-style.jpg?s=612x612&w=0&k=20&c=13Cf4Lk6bf6HejdNW38xb_5IRrFil6q6OzJsGBqwJQ4="
+                    alt="Chef Cartoon">
+                <div class="game-area">
+
+                    <div class="words">
+                        <button class="word">EINS</button>
+                        <button class="word">ZWEI</button>
+                        <button class="word">DREI</button>
+                        <button class="word">VIER</button>
+                        <button class="word">FÜNF</button>
+                    </div>
+                    <div class="matches">
+                        <button class="match">2</button>
+                        <button class="match">3</button>
+                        <button class="match">5</button>
+                        <button class="match">1</button>
+                        <button class="match">4</button>
+                    </div>
+                </div>
+
             </div>
-            <div class="word-de">母 (Haha)</div>
-            <div class="word-en">Mother</div>
-          </div>
-
-          <div class="recall-card">
-            <div class="voice-button" onclick="speak(this,'りんご')">
-              <div class="voice-line"></div><div class="voice-line"></div><div class="voice-line"></div>
+            <div class="xpfarm-controls" style="text-align: center; margin-top: 20px;">
+                <button id="next-btn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Next >></button>
             </div>
-            <div class="word-de">りんご (Ringo)</div>
-            <div class="word-en">Apple</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <script src="Xpfarm.js"></script>
-  <script>
-    function showPopup(id) {
-      document.getElementById(id).style.display = "block";
-    }
+        <!-- Recall Section -->
+        <section id="recall-section" class="content-section" style="display: none;">
+            <div id="recall-content" style="display: none;">
+                <div class="recall-grid">
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Eins')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">EINS</div>
+                        <div class="word-en">1</div>
+                    </div>
 
-    function closePopup(id) {
-      document.getElementById(id).style.display = "none";
-    }
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Zwei')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">ZWEI</div>
+                        <div class="word-en">2</div>
+                    </div>
 
-    window.onclick = function(event) {
-      document.querySelectorAll(".popup").forEach(popup => {
-        if (event.target == popup) {
-          popup.style.display = "none";
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Drei')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">DREI</div>
+                        <div class="word-en">3</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Vier')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">VIER</div>
+                        <div class="word-en">4</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Fünf')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">FÜNF</div>
+                        <div class="word-en">5</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Sechs')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">SECHS</div>
+                        <div class="word-en">6</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Sieben')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">SIEBEN</div>
+                        <div class="word-en">7</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Acht')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">ACHT</div>
+                        <div class="word-en">8</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Neun')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">NEUN</div>
+                        <div class="word-en">9</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Zehn')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">ZEHN</div>
+                        <div class="word-en">10</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Zwanzig')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">ZWANZIG</div>
+                        <div class="word-en">20</div>
+                    </div>
+
+                    <div class="recall-card">
+                        <div class="voice-button" onclick="speak(this,'Dreißig')">
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                            <div class="voice-line"></div>
+                        </div>
+                        <div class="word-de">DREIßIG</div>
+                        <div class="word-en">30</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="Xpfarm.js"></script>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = "block";
         }
-      });
-    }
-  </script>
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Optional: Close when clicking outside
+        window.onclick = function (event) {
+            document.querySelectorAll(".popup").forEach(popup => {
+                if (event.target == popup) {
+                    popup.style.display = "none";
+                }
+            });
+        }
+    </script>
 
 </body>
 
-</html>
-
+</html> 
