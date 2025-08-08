@@ -21,7 +21,7 @@ const matchSets = [
     "AUNT": "TANTE",
     "FRIEND": "FREUND"
   },
- {
+  {
     "NEUNZIG": "90",
     "ESSEN": "FOOD",
     "SCHAF": "SHEEP",
@@ -36,9 +36,9 @@ const matchSets = [
     "HORSE": "PFERD"
   }
 ];
+
 let matchPairs = {};
 let currentSetIndex = 0;
-
 let selectedWord = null;
 let matched = {};
 let xp = 0;
@@ -62,10 +62,8 @@ wordButtons.forEach(btn => {
 matchButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     if (!selectedWord || matched[selectedWord]) return;
-
     const selectedMatch = btn.textContent;
     const wordBtn = Array.from(wordButtons).find(w => w.textContent === selectedWord);
-
     if (matchPairs[selectedWord] === selectedMatch) {
       btn.classList.add("correct");
       wordBtn.classList.add("correct");
@@ -80,7 +78,6 @@ matchButtons.forEach(btn => {
         wordBtn.classList.remove("wrong");
       }, 700);
     }
-
     clearActive(wordButtons);
     selectedWord = null;
   });
@@ -101,20 +98,18 @@ function updateXP() {
   let percentage = Math.min((xp / maxXP) * 100, 100);
   progress.style.width = `${percentage}%`;
   let xpBar = document.getElementById("xp-bar-fill");
-
   if (xp >= maxXP) {
-    xp = 0; // Reset XP
-    stars++; // Increment stars
-    document.getElementById("star-count").textContent = stars;  
-    // Optional: brief animation for earning star
+    xp = 0;
+    stars++;
+    document.getElementById("star-count").textContent = stars;
     document.getElementById("star-counter").style.color = "gold";
     setTimeout(() => {
       document.getElementById("star-counter").style.color = "";
     }, 500);
   }
-
   xpBar.style.width = `${(xp / maxXP) * 100}%`;
 }
+
 document.getElementById("next-btn").addEventListener("click", () => {
   currentSetIndex = (currentSetIndex + 1) % matchSets.length;
   xp = 0;
@@ -123,7 +118,6 @@ document.getElementById("next-btn").addEventListener("click", () => {
   document.getElementById("star-count").textContent = "0";
   loadProblemSet(currentSetIndex);
 });
-
 
 function fadeHeart() {
   if (heartsLeft <= 0) return;
@@ -150,7 +144,6 @@ function showGameOverMessage() {
   msgBox.style.boxShadow = "0 0 20px 5px red";
   msgBox.style.zIndex = "20";
   msgBox.style.textAlign = "center";
-
   const btn = msgBox.querySelector("button");
   btn.style.padding = "10px 25px";
   btn.style.marginTop = "15px";
@@ -162,11 +155,8 @@ function showGameOverMessage() {
   btn.style.cursor = "pointer";
   btn.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.4)";
   btn.style.transition = "0.2s";
-
-  // ✅ Optional: Hover effect
   btn.onmouseenter = () => btn.style.background = "#ff1e1e";
   btn.onmouseleave = () => btn.style.background = "#ff3c3c";
-  
   document.body.appendChild(msgBox);
 }
 
@@ -237,7 +227,7 @@ recallTab.addEventListener("click", () => {
 
 function speak(button, word) {
   const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = 'de-DE'; // Changed from 'ja-JP' to 'de-DE'
+  utterance.lang = 'de-DE';
   speechSynthesis.speak(utterance);
   button.classList.add("active");
   utterance.onend = () => {
@@ -276,18 +266,17 @@ function resetGame() {
   shuffleElements(".words");
   shuffleElements(".matches");
 }
+
 loadProblemSet(0);
 
-  function loadProblemSet(index) {
+function loadProblemSet(index) {
   const wordContainer = document.querySelector(".words");
   const matchContainer = document.querySelector(".matches");
   wordContainer.innerHTML = "";
   matchContainer.innerHTML = "";
-
   matchPairs = matchSets[index];
   matched = {};
   selectedWord = null;
-
   Object.keys(matchPairs).forEach(word => {
     const wordBtn = document.createElement("button");
     wordBtn.textContent = word;
@@ -299,7 +288,6 @@ loadProblemSet(0);
     });
     wordContainer.appendChild(wordBtn);
   });
-
   Object.values(matchPairs).forEach(match => {
     const matchBtn = document.createElement("button");
     matchBtn.textContent = match;
@@ -307,7 +295,6 @@ loadProblemSet(0);
     matchBtn.addEventListener("click", () => {
       if (!selectedWord || matched[selectedWord]) return;
       const wordBtn = [...document.querySelectorAll(".word")].find(w => w.textContent === selectedWord);
-
       if (matchPairs[selectedWord] === matchBtn.textContent) {
         matchBtn.classList.add("correct");
         wordBtn.classList.add("correct");
@@ -322,19 +309,21 @@ loadProblemSet(0);
           wordBtn.classList.remove("wrong");
         }, 700);
       }
-
       clearActive(document.querySelectorAll(".word"));
       selectedWord = null;
     });
     matchContainer.appendChild(matchBtn);
   });
-
   shuffleElements(".words");
   shuffleElements(".matches");
 }
+
 document.getElementById("next-btn").addEventListener("click", () => {
   currentSetIndex = (currentSetIndex + 1) % matchSets.length;
   loadProblemSet(currentSetIndex);
 });
 
-//loadProblemSet(currentSetIndex);
+window.addEventListener("DOMContentLoaded", () => {
+  switchTab(learnTab, learnSection);
+  document.getElementById("recall-content").style.display = "none";
+});
