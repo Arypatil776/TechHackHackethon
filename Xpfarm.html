@@ -10,12 +10,10 @@
 </head>
 
 <body>
-    <!-- Sidebar toggle -->
     <div id="sidebar-toggle">
         <span id="menu-icon">&#9776;</span>
     </div>
 
-    <!-- Sidebar -->
     <div id="sidebar">
         <span id="close-btn">&times;</span>
         <ul>
@@ -26,9 +24,8 @@
         </ul>
     </div>
 
-    <!-- Header with Tabs -->
     <header>
-        <h1>Website Name</h1>
+        <h1>LINGUAQUEST</h1>
         <div class="tabs">
             <div class="tab" id="learn-tab">LEARN</div>
             <div class="tab active" id="xpfarm-tab">XP FARM</div>
@@ -36,19 +33,13 @@
         </div>
     </header>
 
-    <!-- Sections -->
     <main>
-        <!-- Learn Section -->
-        <!-- Learn Section -->
         <section id="learn-section" class="content-section" style="display: none;">
             <div class="learn-container">
-
-                <!-- Left: German Flag -->
                 <div class="learn-flag">
                     <img src="https://flagcdn.com/w320/de.png" alt="Flag" />
                 </div>
 
-                <!-- Center: Level Flow -->
                 <div class="level-flow-chart">
                     <div class="level-row left">
                         <button class="level-btn" onclick="showPopup('popup1')">level-1</button>
@@ -64,7 +55,6 @@
                     </div>
                 </div>
 
-                <!-- Arrows -->
                 <svg class="connector" style="top: 40px; left: 100px;">
                     <defs>
                         <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
@@ -83,7 +73,6 @@
                 </svg>
             </div>
 
-            <!-- Popups -->
             <div id="popup1" class="popup">
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('popup1')">&times;</span>
@@ -169,9 +158,6 @@
             </div>
         </section>
 
-
-        <!-- XP Farm Section -->
-
         <section id="xpfarm-section" class="content-section">
             <div id="star-counter" style="text-align: center; font-size: 24px; margin-bottom: 10px;">
                 ⭐ Stars: <span id="star-count">0</span>
@@ -187,14 +173,12 @@
                     <span class="heart" data-index="2">&#10084;</span>
                 </div>
             </div>
-            <!-- Inside #xpfarm-section -->
 
             <div class="game-wrapper">
                 <img class="game-image"
                     src="https://media.istockphoto.com/id/1087680522/vector/japan-chef-with-cartoon-style.jpg?s=612x612&w=0&k=20&c=13Cf4Lk6bf6HejdNW38xb_5IRrFil6q6OzJsGBqwJQ4="
                     alt="Chef Cartoon">
                 <div class="game-area">
-
                     <div class="words">
                         <button class="word">EINS</button>
                         <button class="word">ZWEI</button>
@@ -210,17 +194,16 @@
                         <button class="match">4</button>
                     </div>
                 </div>
-
             </div>
             <div class="xpfarm-controls" style="text-align: center; margin-top: 20px;">
                 <button id="next-btn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Next >></button>
             </div>
         </section>
 
-        <!-- Recall Section -->
         <section id="recall-section" class="content-section" style="display: none;">
             <div id="recall-content" style="display: none;">
                 <div class="recall-grid">
+                    <!-- Recall Cards -->
                     <div class="recall-card">
                         <div class="voice-button" onclick="speak(this,'Eins')">
                             <div class="voice-line"></div>
@@ -343,7 +326,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <script src="Xpfarm.js"></script>
@@ -356,7 +338,6 @@
             document.getElementById(id).style.display = "none";
         }
 
-        // Optional: Close when clicking outside
         window.onclick = function (event) {
             document.querySelectorAll(".popup").forEach(popup => {
                 if (event.target == popup) {
@@ -367,5 +348,4 @@
     </script>
 
 </body>
-
-</html> 
+</html>
